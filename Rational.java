@@ -31,25 +31,54 @@ public class Rational {
         this.multiply(a);
     }
     public void add(Rational s) {
-	this.numerator=this.numerator * s.denominator + this.denominator * s.numerator;
-	this.denominator = this.denominator * s.denominator;
+	numerator=numerator * s.denominator + denominator * s.numerator;
+	denominator = denominator * s.denominator;
     }
     public void subtract(Rational s) {
-	new Rational r = new Rational (-s.numerator,s.denominator);
+	Rational r = new Rational (-s.numerator,s.denominator);
 	this.add(r);
     }
+    
+      // Finds the GCD of two integer inputs recursively.
+    public static int gcdER (int a, int b){
+        if ((a == b) || (b == 0)){
+            return a;} //returns the GCD.
+        else if (a < b){
+            return gcdER (b,a);} //If b is greater than a, the function will be run again with both values swapped.
+        else{
+            return gcdER (b , (a-b));
+        }
+    } //Recalls the function with b and the difference between a and b.
+    
+    public void reduce(){
+        int GCD = gcdER (this.numerator, this.denominator);
+        numerator /= GCD;
+        denominator /= GCD;
+    }
+    
+    
+    
     public static void main(String[] args) {
-        Rational r = new Rational(2,3); 
+        /*Rational r = new Rational(2,3); 
         Rational s = new Rational(1,2); 
         r.multiply(s);
         System.out.println(r);
         Rational t = new Rational(2,3); 
         Rational u = new Rational(1,2); 
         t.divide(u);
-        System.out.println(t);
-	Rational v = new Rational(2,3); 
+        System.out.println(t);*/
+	    Rational v = new Rational(2,3); 
         Rational w = new Rational(1,2); 
+        Rational x = new Rational (7,6);
         v.add(w);
         System.out.println(v);
+        v.subtract (x);
+        System.out.println(v);
+        Rational y = new Rational (2,4);
+        System.out.println (y);
+        y.reduce();
+        System.out.println (y);
+        
+       
     }
 }
