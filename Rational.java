@@ -1,5 +1,9 @@
 /*
- */
+James Cao, Jongyoul Lee
+APCS1 pd9
+HW33 -- Do You Even Add, Bro?
+2015-11-18
+*/
 public class Rational {
     private int numerator;
     private int denominator;
