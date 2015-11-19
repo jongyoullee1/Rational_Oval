@@ -4,6 +4,8 @@ APCS1 pd9
 HW33 -- Do You Even Add, Bro?
 2015-11-18
 */
+/*
+ */
 public class Rational {
     private int numerator;
     private int denominator;
@@ -60,17 +62,40 @@ public class Rational {
         denominator /= GCD;
     }
     
+  
+    
+    public int compareTo (Rational s){
+        int crossC= this.numerator * s.denominator; //this is the calling fraction
+        int crossP= this.denominator * s.numerator; //this is the parameter fraction
+        if (crossC== crossP){
+            return 0;
+        }
+        else if (crossC > crossP){
+            return 1738;
+        }
+        else{
+            return -1738;
+        }
+    }
     
     
     public static void main(String[] args) {
-        /*Rational r = new Rational(2,3); 
+        /*=============================================
+        =============================================*/
+        
+        //Tests multiplication and division functions
+        System.out.println("Multiplying and dividing");
         Rational s = new Rational(1,2); 
-        r.multiply(s);
-        System.out.println(r);
+        s.multiply(s);
+        System.out.println(s);
         Rational t = new Rational(2,3); 
         Rational u = new Rational(1,2); 
         t.divide(u);
-        System.out.println(t);*/
+        System.out.println(t);
+        
+        
+        //Tests addition and subtraction functions
+        System.out.println("Adding and subtracting");
 	    Rational v = new Rational(2,3); 
         Rational w = new Rational(1,2); 
         Rational x = new Rational (7,6);
@@ -78,11 +103,25 @@ public class Rational {
         System.out.println(v);
         v.subtract (x);
         System.out.println(v);
+        
+        
+        //Tests reducting function
+        System.out.println ("Reducing");
         Rational y = new Rational (2,4);
-        System.out.println (y);
+        System.out.println ("Before: " + y);
         y.reduce();
-        System.out.println (y);
+        System.out.println ("After:  " + y);
+         
+        
+        //Tests compareTo function
+        System.out.println ("Comparing");
+        Rational z = new Rational (2,5);
+        System.out.println (w.compareTo(z)); //should return positive number
+        System.out.println (w.compareTo(y)); //should return zero.
+        System.out.println (y.compareTo(x)); //should return negative number
+        
         
        
     }
 }
+
