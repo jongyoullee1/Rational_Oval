@@ -1,8 +1,8 @@
 /*
-James Cao, Jongyoul Lee
+Jessica Yang, Jongyoul Lee
 APCS1 pd9
-HW33 -- Do You Even Add, Bro?
-2015-11-18
+HW37 -- Rational Equality
+2015-11-24
 */
 /*
  */
