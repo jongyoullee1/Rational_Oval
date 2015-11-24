@@ -79,9 +79,7 @@ public class Rational {
     }
     
     public boolean equals(Rational s){
-    	double a = s.floatValue();
-    	double b = this.floatValue();
-    	return a == b;
+    	return this.compareTo(s)==0;
     }
     
     
