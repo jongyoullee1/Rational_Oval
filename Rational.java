@@ -78,6 +78,12 @@ public class Rational {
         }
     }
     
+    public boolean equals(Rational s){
+    	double a = s.floatValue();
+    	double b = this.floatValue();
+    	return a == b;
+    }
+    
     
     public static void main(String[] args) {
         /*=============================================
@@ -86,7 +92,7 @@ public class Rational {
         //Tests multiplication and division functions
         System.out.println("Multiplying and dividing");
         Rational s = new Rational(1,2); 
-        s.multiply(s);
+        //s.multiply(s);
         System.out.println(s);
         Rational t = new Rational(2,3); 
         Rational u = new Rational(1,2); 
@@ -119,7 +125,12 @@ public class Rational {
         System.out.println (w.compareTo(z)); //should return positive number
         System.out.println (w.compareTo(y)); //should return zero.
         System.out.println (y.compareTo(x)); //should return negative number
-        
+
+      	//Tests Equals
+      	System.out.println(y.equals(x));//should return false
+       	System.out.println(s.equals(u));//should return false     	
+      	System.out.println(y.compareTo(x));//should return false
+       	System.out.println(s.compareTo(u));//should return false
         
        
     }
