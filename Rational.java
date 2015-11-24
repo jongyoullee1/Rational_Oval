@@ -79,7 +79,7 @@ public class Rational {
     }
     
     public boolean equals(Rational s){
-    	return this.compareTo(s)==0;
+    	return this.compareTo(s)==0 && (s instanceof Rational);
     }
     
     
@@ -129,7 +129,8 @@ public class Rational {
        	System.out.println(s.equals(u));//should return true     	
       	System.out.println(y.compareTo(x));//should return -1738
        	System.out.println(s.compareTo(u));//should return 0
-        
+        double i = 1/2;
+      	System.out.println(s.equals(i));
        
     }
 }
